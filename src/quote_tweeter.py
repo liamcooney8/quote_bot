@@ -19,11 +19,9 @@ client = tweepy.Client(bearer_token=bearer_token,
                         access_token_secret=access_secret)
 
 
-count = 0 
-while count < 10:
+while True:
     tweet_info = choose_quote(df_dict)
     print(f"\nTweet: {tweet_info}")
     client.create_tweet(text=tweet_info)
     print("\nSuccessfully Tweeted")
-    count += 1
     sleep(10)

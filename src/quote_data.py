@@ -1,7 +1,7 @@
 import csv
 import random
 
-with open("quote_df.csv", mode="r") as df:
+with open("./src/quote_df.csv", mode="r") as df:
     reader = csv.reader(df)
     df_dict = {rows[0]:rows[1] for rows in reader}
 

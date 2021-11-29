@@ -1,1 +1,1 @@
-worker: python quote_tweeter.py
+worker: python ./src/quote_tweeter.py

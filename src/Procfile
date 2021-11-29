@@ -1,0 +1,1 @@
+worker: python quote_tweeter.py

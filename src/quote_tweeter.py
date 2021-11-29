@@ -21,7 +21,5 @@ client = tweepy.Client(bearer_token=bearer_token,
 
 while True:
     tweet_info = choose_quote(df_dict)
-    print(f"\nTweet: {tweet_info}")
     client.create_tweet(text=tweet_info)
-    print("\nSuccessfully Tweeted")
     sleep(10)

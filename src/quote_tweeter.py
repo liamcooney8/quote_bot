@@ -24,4 +24,4 @@ client = tweepy.Client(
 while True:
     tweet_info = choose_quote(df_dict)
     client.create_tweet(text=tweet_info)
-    sleep(10)
+    sleep(20)

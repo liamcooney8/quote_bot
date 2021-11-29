@@ -12,11 +12,13 @@ consumer_secret = os.getenv("CONSUMER_SECRET")
 access_key = os.getenv("ACCESS_KEY")
 access_secret = os.getenv("ACCESS_SECRET")
 
-client = tweepy.Client(bearer_token=bearer_token, 
-                        consumer_key=consumer_key, 
-                        consumer_secret=consumer_secret,
-                        access_token=access_key,
-                        access_token_secret=access_secret)
+client = tweepy.Client(
+    bearer_token=bearer_token, 
+    consumer_key=consumer_key, 
+    consumer_secret=consumer_secret,
+    access_token=access_key,
+    access_token_secret=access_secret
+    )
 
 
 while True:

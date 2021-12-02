@@ -3,7 +3,9 @@ import os
 from dotenv import load_dotenv
 from quote_data import choose_quote, df_dict
 import time
+import datetime
 import schedule
+import logging
 
 load_dotenv()
 
@@ -24,11 +26,14 @@ client = tweepy.Client(
 
 def create_tweet():
     tweet_info = choose_quote(df_dict)
+    logging.info(f"Tweet: {tweet_info}")
     client.create_tweet(text=tweet_info)
+    logging.info(f"Tweet created successfully at {datetime.datetime.now()}")
 
 
+# Time in UTC
 schedule.every().day.at("15:30").do(create_tweet)
-schedule.every().day.at("17:00").do(create_tweet)
+schedule.every().day.at("19:00").do(create_tweet)
 schedule.every().day.at("23:00").do(create_tweet)
 
 while True:

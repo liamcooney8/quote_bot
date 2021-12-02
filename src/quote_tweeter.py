@@ -27,9 +27,9 @@ def create_tweet():
     client.create_tweet(text=tweet_info)
 
 
-schedule.every().day.at("10:30").do(create_tweet)
-schedule.every().day.at("12:15").do(create_tweet)
-schedule.every().day.at("18:00").do(create_tweet)
+schedule.every().day.at("15:30").do(create_tweet)
+schedule.every().day.at("17:25").do(create_tweet)
+schedule.every().day.at("23:00").do(create_tweet)
 
 while True:
     schedule.run_pending()

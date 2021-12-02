@@ -27,7 +27,6 @@ client = tweepy.Client(
 
 def create_tweet():
     tweet_info = choose_quote(df_dict)
-    logging.info(f"Tweet: {tweet_info}")
     client.create_tweet(text=tweet_info)
     logging.info(f"Tweet created successfully at {datetime.datetime.now()}")
 
@@ -38,7 +37,5 @@ schedule.every().day.at("17:00").do(create_tweet)
 schedule.every().day.at("23:00").do(create_tweet)
 
 while True:
-    # schedule.run_pending()
-    # time.sleep(1)
-    create_tweet()
-    time.sleep(15)
+    schedule.run_pending()
+    time.sleep(1)

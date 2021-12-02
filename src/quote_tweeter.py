@@ -28,7 +28,7 @@ def create_tweet():
 
 
 schedule.every().day.at("15:30").do(create_tweet)
-schedule.every().day.at("17:25").do(create_tweet)
+schedule.every().day.at("17:00").do(create_tweet)
 schedule.every().day.at("23:00").do(create_tweet)
 
 while True:

@@ -1,3 +1,4 @@
 .env
 .DS_Store
 items_to_add.txt
+test.py

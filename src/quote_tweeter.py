@@ -2,7 +2,8 @@ import tweepy
 import os
 from dotenv import load_dotenv
 from quote_data import choose_quote, df_dict
-from time import sleep
+import time
+import schedule
 
 load_dotenv()
 
@@ -21,7 +22,15 @@ client = tweepy.Client(
     )
 
 
-while True:
+def create_tweet():
     tweet_info = choose_quote(df_dict)
     client.create_tweet(text=tweet_info)
-    sleep(43200)
+
+
+schedule.every().day.at("10:30").do(create_tweet)
+schedule.every().day.at("12:15").do(create_tweet)
+schedule.every().day.at("18:00").do(create_tweet)
+
+while True:
+    schedule.run_pending()
+    time.sleep(1)

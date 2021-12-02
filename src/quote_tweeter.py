@@ -8,6 +8,7 @@ import schedule
 import logging
 
 load_dotenv()
+logging.getLogger().setLevel(logging.INFO)
 
 bearer_token = os.getenv("BEARER_TOKEN")
 consumer_key = os.getenv("CONSUMER_KEY")
@@ -33,9 +34,11 @@ def create_tweet():
 
 # Time in UTC
 schedule.every().day.at("15:30").do(create_tweet)
-schedule.every().day.at("19:00").do(create_tweet)
+schedule.every().day.at("17:00").do(create_tweet)
 schedule.every().day.at("23:00").do(create_tweet)
 
 while True:
-    schedule.run_pending()
-    time.sleep(1)
+    # schedule.run_pending()
+    # time.sleep(1)
+    create_tweet()
+    time.sleep(15)
